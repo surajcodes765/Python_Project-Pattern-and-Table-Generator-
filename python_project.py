@@ -57,18 +57,12 @@ def pyramid(n, symbol):
     return "\n".join(result)
     
 def inverted_pyramid(n, symbol):
-
     result = []
-
     for i in range(n, 0, -1):
         row = ""
-
         for j in range(n - i):
             row += " "
-
         for j in range(2 * i - 1):
             row += symbol
-
         result.append(row)
-
     return "\n".join(result)
