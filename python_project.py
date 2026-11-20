@@ -96,3 +96,7 @@ def number_pyramid(n):
             row += " "
         for j in range(1, i + 1):
             row += str(j)
+        for j in range(i - 1, 0, -1):
+            row += str(j)
+        result.append(row)
+    return "\n".join(result)
