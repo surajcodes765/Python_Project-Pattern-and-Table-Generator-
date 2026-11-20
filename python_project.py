@@ -44,3 +44,15 @@ def right_triangle(n, symbol):
             row += symbol + " "
         result.append(row)
     return "\n".join(result)
+
+def pyramid(n, symbol):
+    result = []
+    for i in range(1, n + 1):
+        row = ""
+        for j in range(n - i):
+            row += " "
+        for j in range(2 * i - 1):
+            row += symbol
+        result.append(row)
+    return "\n".join(result)
+    
