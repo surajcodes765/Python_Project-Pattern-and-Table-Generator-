@@ -36,6 +36,7 @@ def get_symbol():
         else:
             print("Invalid symbol. Choose from the allowed symbols.")
 
+#STAR PATTERNS
 def right_triangle(n, symbol):
     result = []
     for i in range(1, n + 1):
@@ -85,6 +86,7 @@ def diamond(n, symbol):
             row += symbol
         result.append(row)
     return "\n".join(result)
+    
 # NUMBER PATTERNS 
 def number_pyramid(n):
     result = []
