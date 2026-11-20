@@ -76,3 +76,12 @@ def diamond(n, symbol):
         for j in range(2 * i - 1):
             row += symbol
         result.append(row)
+
+    for i in range(n - 1, 0, -1):
+        row = ""
+        for j in range(n - i):
+            row += " "
+        for j in range(2 * i - 1):
+            row += symbol
+        result.append(row)
+    return "\n".join(result)
