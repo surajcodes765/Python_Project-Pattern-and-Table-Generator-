@@ -85,3 +85,11 @@ def diamond(n, symbol):
             row += symbol
         result.append(row)
     return "\n".join(result)
+########## NUMBER PATTERNS ##########
+def number_pyramid(n):
+
+    result = []
+
+    for i in range(1, n + 1):
+        row = ""
+
