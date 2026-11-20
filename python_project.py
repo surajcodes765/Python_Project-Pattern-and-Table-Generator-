@@ -10,3 +10,11 @@ menu = {
     9: "Pascal's Triangle",
     0: "Exit"
 }
+def right_triangle(n, symbol):
+    result = []
+    for i in range(1, n + 1):
+        row = ""
+        for j in range(i):
+            row += symbol + " "
+        result.append(row)
+    return "\n".join(result)
