@@ -10,7 +10,7 @@ menu = {
     9: "Pascal's Triangle",
     0: "Exit"
 }
-TUPLE OF ALLOWED SYMBOLS
+#TUPLE OF ALLOWED SYMBOLS
 allowed_symbols = ("*", "#", "@", "$", "+")
 allowed_set = set(allowed_symbols)
 patterns_data = {}
@@ -126,5 +126,12 @@ def pascal_triangle(n):
                 (factorial(j) * factorial(i - j))
             )
             row += str(value) + " "
+        result.append(row)
+    return "\n".join(result)
+# Multplication Table
+def multiplication_table(number):
+    result = []
+    for i in range(1, 11):
+        row = f"{number} x {i} = {number * i}"
         result.append(row)
     return "\n".join(result)
