@@ -10,6 +10,32 @@ menu = {
     9: "Pascal's Triangle",
     0: "Exit"
 }
+TUPLE OF ALLOWED SYMBOLS
+allowed_symbols = ("*", "#", "@", "$", "+")
+allowed_set = set(allowed_symbols)
+patterns_data = {}
+
+def get_size():
+    while True:
+        try:
+            size = int(input("Enter pattern size: "))
+            if size > 0:
+                return size
+            else:
+                print("Please enter a positive number.")
+        except ValueError:
+            print("Please enter a valid integer.")
+
+def get_symbol():
+    while True:
+        symbol = input(
+            f"Choose a symbol {allowed_symbols}: "
+        )
+        if len(symbol) == 1 and symbol in allowed_set:
+            return symbol
+        else:
+            print("Invalid symbol. Choose from the allowed symbols.")
+
 def right_triangle(n, symbol):
     result = []
     for i in range(1, n + 1):
