@@ -35,7 +35,7 @@ def get_symbol():
             return symbol
         else:
             print("Invalid symbol. Choose from the allowed symbols.")
-#STAR PATTERNS
+
 def right_triangle(n, symbol):
     result = []
     for i in range(1, n + 1):
