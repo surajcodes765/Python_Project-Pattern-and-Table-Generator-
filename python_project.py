@@ -85,11 +85,9 @@ def diamond(n, symbol):
             row += symbol
         result.append(row)
     return "\n".join(result)
-########## NUMBER PATTERNS ##########
+# NUMBER PATTERNS 
 def number_pyramid(n):
-
     result = []
-
     for i in range(1, n + 1):
         row = ""
         for j in range(n - i):
@@ -102,17 +100,31 @@ def number_pyramid(n):
     return "\n".join(result)
 
 def floyd_triangle(n):
-
     result = []
     number = 1
-
     for i in range(1, n + 1):
         row = ""
-
         for j in range(i):
             row += str(number) + " "
             number += 1
-
         result.append(row)
-
+    return "\n".join(result)
+# RECURSION AND PASCAL'S TRIANGLE
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+def pascal_triangle(n):
+    result = []
+    for i in range(n):
+        row = ""
+        for j in range(n - i - 1):
+            row += " "
+        for j in range(i + 1):
+            value = (
+                factorial(i) //
+                (factorial(j) * factorial(i - j))
+            )
+            row += str(value) + " "
+        result.append(row)
     return "\n".join(result)
