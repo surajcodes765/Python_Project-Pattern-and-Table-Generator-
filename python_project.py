@@ -92,6 +92,7 @@ def number_pyramid(n):
 
     for i in range(1, n + 1):
         row = ""
-         # Spaces
         for j in range(n - i):
             row += " "
+        for j in range(1, i + 1):
+            row += str(j)
