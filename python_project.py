@@ -151,3 +151,48 @@ def multiplication_grid():
             row += f"{i * j:5}"
         result.append(row)
     return "\n".join(result)
+    
+    ## FILE HANDLING
+
+def save_pattern(name, output):
+    with open("patterns.txt", "a") as file:
+        file.write("\n" + "=" * 30 + "\n")
+        file.write(name + "\n")
+        file.write("=" * 30 + "\n")
+        file.write(output + "\n")
+    print("Pattern saved successfully in patterns.txt")
+    
+# MAIN PROGRAM
+while True:
+    print("\n========== PATTERN GENERATOR ==========")
+    for key, value in menu.items():
+        print(f"{key}. {value}")
+    try:
+        choice = int(input("\nEnter your choice: "))
+    except ValueError:
+        print("Please enter a valid menu number.")
+        continue
+ # Check whether choice exists
+    if choice not in menu:
+        print("Invalid choice.")
+        continue
+    # Exit
+    if choice == 0:
+        print("Thank you for using Pattern Generator!")
+        break
+    name = menu[choice]
+    output = None
+    # Star patterns
+    if choice in (1, 2, 3, 4):
+        size = get_size()
+        symbol = get_symbol()
+        if choice == 1:
+            output = right_triangle(size, symbol)
+        elif choice == 2:
+            output = pyramid(size, symbol)
+        elif choice == 3:
+            output = inverted_pyramid(size, symbol)
+        elif choice == 4:
+            output = diamond(size, symbol)
+
+    
