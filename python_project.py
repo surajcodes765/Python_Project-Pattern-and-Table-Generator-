@@ -137,3 +137,17 @@ def multiplication_table(number):
         row = f"{number} x {i} = {number * i}"
         result.append(row)
     return "\n".join(result)
+#multiplication_grid
+def multiplication_grid():
+    start = int(input("Enter starting number: "))
+    end = int(input("Enter ending number: "))
+    if start > end:
+        print("Starting number must be smaller than ending number.")
+        return None
+    result = []
+    for i in range(start, end + 1):
+        row = ""
+        for j in range(1, 11):
+            row += f"{i * j:5}"
+        result.append(row)
+    return "\n".join(result)
