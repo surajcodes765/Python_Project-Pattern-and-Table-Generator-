@@ -194,5 +194,31 @@ while True:
             output = inverted_pyramid(size, symbol)
         elif choice == 4:
             output = diamond(size, symbol)
+    # Number patterns
+    elif choice in (5, 6, 9):
+        size = get_size()
+        if choice == 5:
+            output = number_pyramid(size)
+        elif choice == 6:
+            output = floyd_triangle(size)
+        elif choice == 9:
+            output = pascal_triangle(size)
+    # Multiplication table
+    elif choice == 7:
+        number = int(input("Enter a number: "))
+        output = multiplication_table(number)
+    # Multiplication grid
+    elif choice == 8:
+        output = multiplication_grid()
+    # Display and save
+    if output is not None:
+        print("\n" + name)
+        print("-" * 30)
+        print(output)
+     # Store generated pattern in dictionary
+        patterns_data[name] = output
+     # Save pattern in text file
+        save_pattern(name, output)
+
 
     
